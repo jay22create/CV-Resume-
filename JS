@@ -1,0 +1,67 @@
+// 🏛️ Caesar's Party Guest List 🎉
+// Exercise: JavaScript Array Methods Practice
+
+// Initial guest list
+let guests = ["ANTONY", "CICERO", "CASSIUS", "CLEOPATRA"];
+console.log("Initial Guest List:", guests);
+
+// ----------------------------------
+// Step 1 🧩 Add "BRUTUS" to the beginning
+// Hint 💡 Use unshift()
+guests.unshift("BRUTUS");
+console.log("Step 1 - After Adding BRUTUS:", guests);
+
+// Question 1 🤔
+// How to verify "BRUTUS" is first?
+console.log("Is BRUTUS first?", guests[0] === "BRUTUS");
+
+// ----------------------------------
+// Step 2 🧩 Add "AUGUSTUS" and "LUCIA" to the end
+// Hint 💡 Use push()
+guests.push("AUGUSTUS", "LUCIA");
+console.log("Step 2 - After Adding AUGUSTUS & LUCIA:", guests);
+
+// ----------------------------------
+// Step 3 🧩 Check if "SPARTACUS" is on the list
+// Hint 💡 Use indexOf()
+const spartacusIndex = guests.indexOf("SPARTACUS");
+console.log("Step 3 - Index of SPARTACUS:", spartacusIndex);
+
+// Question 2 🤔
+// What if SPARTACUS wasn't invited?
+if (spartacusIndex === -1) {
+  console.log("SPARTACUS was not invited. indexOf returned -1.");
+}
+
+// ----------------------------------
+// Step 4 🧩 Remove "CASSIUS" from the list
+// Hint 💡 Find index and use splice()
+const indexToRemove = guests.indexOf("CASSIUS");
+if (indexToRemove !== -1) {
+  guests.splice(indexToRemove, 1);
+  console.log("Step 4 - After Removing CASSIUS:", guests);
+} else {
+  console.log("CASSIUS was not found in the list.");
+}
+
+// ----------------------------------
+// Step 5 🧩 Extract first 3 guests for special invite
+// Hint 💡 Use slice()
+const specialGuests = guests.slice(0, 3);
+console.log("Step 5 - Special Guests (first 3):", specialGuests);
+
+// ----------------------------------
+// Step 6 🧩 Sort guest list alphabetically, but keep first guest honored
+// Hint 💡 Use slice(), sort(), and concat()
+const honoredGuests = guests.slice(0, 1); // BRUTUS
+const otherGuests = guests.slice(1); // The rest
+otherGuests.sort(); // Alphabetical sort
+const sortedGuests = honoredGuests.concat(otherGuests);
+console.log("Step 6 - Final Sorted Guest List:", sortedGuests);
+
+// ----------------------------------
+// 🎉 Final Output Summary
+console.log("\n=== Caesar's Final Guest List Summary ===");
+console.log("Original Guests (after all changes):", guests);
+console.log("Special Guests:", specialGuests);
+console.log("Sorted Guests (Honored First):", sortedGuests);
